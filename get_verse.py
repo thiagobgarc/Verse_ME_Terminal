@@ -97,7 +97,10 @@ def get_verse():
                 print(f"Book: {book} || {chapter}:{verse} || Text: {text}")
         
             else: 
-                print(response.status_code,"Error")
+                print(response.status_code,"Error")    
+        elif user_input.lower() == "3":
+            print("\033[1m" + bye_ascii_art + "\033[0m")
+            break
         else:
             print("Invalid input. Press 'More' for more options")
             
