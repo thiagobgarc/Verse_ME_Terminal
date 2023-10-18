@@ -47,7 +47,7 @@ def get_verse():
     
     while True:
         user_input = input("Do you want to search a verse? Type 'More' for more options (y/n): ")
-        if user_input.lower() == "y":
+        if user_input.lower() == "y" or user_input.lower() == "yes":
             search = input("Enter the book name, chapter and verse number: ")
             if search: 
                 url = f"https://bible-api.com/"
@@ -67,7 +67,7 @@ def get_verse():
                 else: 
                     print(response.status_code, "Error")
                     
-        elif user_input.lower() == "n":
+        elif user_input.lower() == "n" or user_input.lower() == "no":
             print("\033[1m" + bye_ascii_art + "\033[0m")
             break
         elif user_input.lower() == "more":
@@ -106,5 +106,3 @@ def get_verse():
             
 
 get_verse()
-    
-    
