@@ -12,13 +12,12 @@ verse_me_ascii_art = r"""
 
 oprions_ascii_art = r"""
 
- _____ ______  _____  _____  _____  _   _  _____ 
-|  _  || ___ \|_   _||_   _||  _  || \ | |/  ___|
-| | | || |_/ /  | |    | |  | | | ||  \| |\ `--. 
-| | | ||  __/   | |    | |  | | | || . ` | `--. \
-\ \_/ /| |      | |   _| |_ \ \_/ /| |\  |/\__/ /
- \___/ \_|      \_/   \___/  \___/ \_| \_/\____/ 
-                                                 
+
+  ____  ___  ______________  _  ______
+ / __ \/ _ \/_  __/  _/ __ \/ |/ / __/
+/ /_/ / ___/ / / _/ // /_/ /    /\ \  
+\____/_/    /_/ /___/\____/_/|_/___/  
+                                      
 """
 
 found_it_ascii_art = r"""
@@ -27,6 +26,16 @@ found_it_ascii_art = r"""
   / \ / \ / \ / \ / \   / \ / \ 
  ( F | O | U | N | D ) ( I | T )
   \_/ \_/ \_/ \_/ \_/   \_/ \_/ 
+
+"""
+
+bye_ascii_art = r"""
+
+   _____  ______
+  / _ ) \/ / __/
+ / _  |\  / _/  
+/____/ /_/___/  
+                
 
 """
 def get_verse():
@@ -59,6 +68,7 @@ def get_verse():
                     print(response.status_code, "Error")
                     
         elif user_input.lower() == "n":
+            print("\033[1m" + bye_ascii_art + "\033[0m")
             break
         elif user_input.lower() == "more":
             print("\033[1m" + oprions_ascii_art + "\033[0m")
@@ -66,6 +76,7 @@ def get_verse():
             print("2. Random verse")
             print("3. Exit")
         elif user_input.lower() == "exit":
+            print("\033[1m" + bye_ascii_art + "\033[0m")
             break
         elif user_input.lower() == "1":
             search = input("Enter the book name, chapter and verse number: ")
