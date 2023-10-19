@@ -1,5 +1,6 @@
 # Verse_ME_Terminal
 
+<strong>Version 1.1 now LIVE</strong>
 
 ## Features
 
