@@ -38,71 +38,88 @@ bye_ascii_art = r"""
                 
 
 """
-def get_verse():
-    
-    print("\033[1m" + verse_me_ascii_art + "\033[0m")
-    
-    print("\033[1m" + "WELCOME TO VERSE ME!" + "\033[1m")
-    
-    
-    while True:
-        user_input = input("Do you want to search a verse? Type 'More' for more options (y/n): ")
-        if user_input.lower() == "y" or user_input.lower() == "yes":
-            search = input("Enter the book name, chapter and verse number: ")
-            if search: 
-                url = f"https://bible-api.com/"
-        
-                response = requests.get(f"{url}{search}")
-        
-                if response.status_code == 200:
-                    json_data = response.json()
-                    print(f"{found_it_ascii_art}")
-            
-            # Access verse details directly from the dictionary
-                    book = json_data['reference']
-                    text = json_data['text']
-            
-                    print(f"Book: {book} || Text: {text}")
-            
-                else: 
-                    print(response.status_code, "Error")
-                    
-        elif user_input.lower() == "n" or user_input.lower() == "no":
-            print("\033[1m" + bye_ascii_art + "\033[0m")
-            break
-        elif user_input.lower() == "more":
-            print("\033[1m" + oprions_ascii_art + "\033[0m")
-            print("1. Search for a verse")
-            print("2. Random verse")
-            print("3. Exit")
-        elif user_input.lower() == "exit":
-            print("\033[1m" + bye_ascii_art + "\033[0m")
-            break
-        elif user_input.lower() == "1":
-            search = input("Enter the book name, chapter and verse number: ")
-        elif user_input.lower() == "2":
-            get_random_url = 'https://labs.bible.org/api/?passage=random&type=json&callback='
-    
-            response = requests.get(get_random_url)
-    
-            if response.status_code == 200:
-                json_data = response.json()
-                print(f"{found_it_ascii_art}")
-        
-                book = json_data[0]['bookname']
-                chapter = json_data[0]['chapter']
-                verse = json_data[0]['verse']
-                text = json_data[0]['text']
-        
-                print(f"Book: {book} || {chapter}:{verse} || Text: {text}")
-        
-            else: 
-                print(response.status_code,"Error")    
-        elif user_input.lower() == "3":
-            print("\033[1m" + bye_ascii_art + "\033[0m")
-            break
-        else:
-            print("Invalid input. Press 'More' for more options")
-            
+import requests
 
-get_verse()
+class VerseMe:
+    def __init__(self):
+        self.verse_me_ascii_art = verse_me_ascii_art
+        self.found_it_ascii_art = found_it_ascii_art
+        self.bye_ascii_art = bye_ascii_art
+        self.options_ascii_art = oprions_ascii_art
+
+    def get_verse(self):
+        print("\033[1m" + self.verse_me_ascii_art + "\033[0m")
+        print("\033[1m" + "WELCOME TO VERSE ME!" + "\033[1m")
+
+        while True:
+            user_input = input("Do you want to search a verse? Type 'More' for more options (y/n): ")
+            if user_input.lower() in {"y", "yes"}:
+                search = input("Enter the book name, chapter and verse number: ")
+                if search:
+                    self.search_and_display_verse(search)
+                else:
+                    print("Invalid input. Press 'More' for more options")
+            elif user_input.lower() in {"n", "no"}:
+                print("\033[1m" + self.bye_ascii_art + "\033[0m")
+                break
+            elif user_input.lower() == "more":
+                self.display_options()
+            else:
+                print("Invalid input. Press 'More' for more options")
+
+    def search_and_display_verse(self, search):
+        url = f"https://bible-api.com/{search}"
+        response = requests.get(url)
+
+        if response.status_code == 200:
+            json_data = response.json()
+            print(f"{self.found_it_ascii_art}")
+
+            book = json_data['reference']
+            text = json_data['text']
+
+            print(f"Book: {book} || Text: {text}")
+        else:
+            print(response.status_code, "Error")
+
+    def display_options(self):
+        print("\033[1m" + self.options_ascii_art + "\033[0m")
+        print("1. Search for a verse")
+        print("2. Random verse")
+        print("3. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            search = input("Enter the book name, chapter and verse number: ")
+            if search:
+                self.search_and_display_verse(search)
+            else:
+                print("Invalid input. Press 'More' for more options")
+        elif choice == "2":
+            self.get_random_verse()
+        elif choice == "3":
+            print("\033[1m" + self.bye_ascii_art + "\033[0m")
+            exit()
+        else:
+            print("Invalid choice. Please choose a valid option")
+
+    def get_random_verse(self):
+        get_random_url = 'https://labs.bible.org/api/?passage=random&type=json&callback='
+        response = requests.get(get_random_url)
+
+        if response.status_code == 200:
+            json_data = response.json()
+            print(f"{self.found_it_ascii_art}")
+
+            book = json_data[0]['bookname']
+            chapter = json_data[0]['chapter']
+            verse = json_data[0]['verse']
+            text = json_data[0]['text']
+
+            print(f"Book: {book} || {chapter}:{verse} || Text: {text}")
+        else:
+            print(response.status_code, "Error")
+
+if __name__ == "__main__":
+    verse_me = VerseMe()
+    verse_me.get_verse()
