@@ -49,7 +49,7 @@ class VerseMe:
 
     def get_verse(self):
         print("\033[1m" + self.verse_me_ascii_art + "\033[0m")
-        print("\033[1m" + "WELCOME TO VERSE ME!" + "\033[1m" + "Version 1.1")
+        print("\033[1m" + "WELCOME TO VERSE ME!" + "\033[1m" + " Version 1.1")
 
         while True:
             user_input = input("Do you want to search a verse? Type 'More' for more options (y/n): ")
