@@ -16,3 +16,4 @@ This was created since I found myself using the internet less and less while cod
 - fork this reposititory
 - clone it
 - <strong>USE IT!</strong> by typing python or python3 get_verse.py
+- git pull origin main to update
