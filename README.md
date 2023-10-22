@@ -24,3 +24,5 @@ This was created since I found myself using the internet less and less while cod
 ### To Update
 ```bash
   git pull origin main
+
+### Issues
