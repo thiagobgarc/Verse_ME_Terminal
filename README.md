@@ -15,8 +15,5 @@ This features all the same functiality as the web application I created called V
 Feel free to clone this repository and use this.
 This was created since I found myself using the internet less and less while coding. For daily motivation through out my day I created this to almost break away from the internet a bit and lessen the risk of getting out of focus. 
 
-## CLONING
-- fork this reposititory
-- clone it
-- <strong>USE IT!</strong> by typing python or python3 get_verse.py
-- git pull origin main to update
+## Package
+[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
