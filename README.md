@@ -16,4 +16,4 @@ Feel free to clone this repository and use this.
 This was created since I found myself using the internet less and less while coding. For daily motivation through out my day I created this to almost break away from the internet a bit and lessen the risk of getting out of focus. 
 
 ## Package
-[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+[VerseMe Package](https://guides.github.com/features/mastering-markdown/)
