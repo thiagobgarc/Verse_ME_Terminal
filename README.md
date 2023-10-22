@@ -28,7 +28,7 @@ This was created since I found myself using the internet less and less while cod
 ```
 ### Run Code
 ```bash
-cd 
+cd get_verse_terminal
 python3 get_verse.py
 ```
 
