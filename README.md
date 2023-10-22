@@ -17,7 +17,7 @@ This was created since I found myself using the internet less and less while cod
 
 ### Issues
   If there are any issues please click the link below and make an issue and I'll fix the bug.
-    [Issues]('https://github.com/thiagobgarc/Verse_ME_Terminal/issues')
+    - [Issues]('https://github.com/thiagobgarc/Verse_ME_Terminal/issues')
 
 ## Clone this repository
 - Fork this repository
