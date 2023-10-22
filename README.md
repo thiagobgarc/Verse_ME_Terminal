@@ -23,4 +23,4 @@ This was created since I found myself using the internet less and less while cod
   git clone https://github.com/yourusername/yourrepository.git
 ### To Update
 ```bash
-git pull origin main
+  git pull origin main
