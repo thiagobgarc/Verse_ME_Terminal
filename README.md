@@ -18,6 +18,8 @@ This was created since I found myself using the internet less and less while cod
 ### Issues
   If there are any issues please click the link below and make an issue and I'll fix the bug.
 - [Issues](https://github.com/thiagobgarc/Verse_ME_Terminal/issues)
+- If you want to collaborate, create an issue-- Ex: Documentation addon: (SOSO) -- and I'll review and give the Ok.
+  - Make sure to include details on what you are planning to do so the review will go quickly. 
 
 
 ## Clone this repository
