@@ -1,6 +1,6 @@
 # Verse_ME_Terminal
 
-### Version 1.2 now LIVE
+### Version 1.2.0 now LIVE
 
 ## Features
 
