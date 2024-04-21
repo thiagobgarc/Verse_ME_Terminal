@@ -33,7 +33,7 @@ class VerseMe:
 
     def search_and_display_verse(self, search):
         url = f"https://bible-api.com/{search}"
-        response = requests.get(url)
+        response = requests.get(url, timeout=60)
 
         if response.status_code == 200:
             json_data = response.json()
@@ -72,7 +72,7 @@ class VerseMe:
 
     def get_random_verse(self):
         get_random_url = 'https://labs.bible.org/api/?passage=random&type=json&callback='
-        response = requests.get(get_random_url)
+        response = requests.get(get_random_url, timeout=60)
 
         if response.status_code == 200:
             json_data = response.json()
