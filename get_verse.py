@@ -1,8 +1,8 @@
 import requests
 import json 
-import random
 
 from ascii import verse_me_ascii_art, oprions_ascii_art, found_it_ascii_art, bye_ascii_art
+import secrets
 
 class VerseMe:
     def __init__(self):
@@ -143,7 +143,7 @@ class VerseMe:
             with open(file_name, 'r') as f:
                 verses = json.load(f)
             
-            random_choice = random.choice(verses)
+            random_choice = secrets.choice(verses)
             
             print("Verse: " + random_choice['verse'])
             print("Reference: " + random_choice['reference'])
@@ -154,7 +154,7 @@ class VerseMe:
             with open(file_name, 'r') as f:
                 verses = json.load(f)
                 
-            random_choice = random.choice(verses)
+            random_choice = secrets.choice(verses)
             
             print("Verse: " + random_choice['verse'])
             print("Reference: " + random_choice['reference'])
@@ -165,7 +165,7 @@ class VerseMe:
             with open(file_name, 'r') as f:
                 verses = json.load(f)
                 
-            random_choice = random.choice(verses)
+            random_choice = secrets.choice(verses)
             
             print("Verse: " + random_choice['verse'])
             print("Reference: " + random_choice['reference'])
@@ -176,7 +176,7 @@ class VerseMe:
             with open(file_name, 'r') as f:
                 verses = json.load(f)
                 
-            random_choice = random.choice(verses)
+            random_choice = secrets.choice(verses)
             
             print("Verse: " + random_choice['verse'])
             print("Reference: " + random_choice['reference'])
@@ -187,7 +187,7 @@ class VerseMe:
             with open(file_name, 'r') as f:
                 verses = json.load(f)
                 
-            random_choice = random.choice(verses)
+            random_choice = secrets.choice(verses)
             
             print("Verse: " + random_choice['verse'])
             print("Reference: " + random_choice['reference'])
@@ -198,7 +198,7 @@ class VerseMe:
             with open(file_name, 'r') as f:
                 verses = json.load(f)
                 
-            random_choice = random.choice(verses)
+            random_choice = secrets.choice(verses)
             
             print("Verse: " + random_choice['verse'])
             print("Reference: " + random_choice['reference'])
@@ -209,7 +209,7 @@ class VerseMe:
             with open(file_name, 'r') as f:
                 verses = json.load(f)
             
-            random_choice = random.choice(verses)
+            random_choice = secrets.choice(verses)
             
             print("Verse: " + random_choice['verse'])
             print("Reference: " + random_choice['reference'])
