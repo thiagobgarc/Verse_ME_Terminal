@@ -3,6 +3,7 @@ import json
 
 from ascii import verse_me_ascii_art, oprions_ascii_art, found_it_ascii_art, bye_ascii_art
 import secrets
+from security import safe_requests
 
 class VerseMe:
     def __init__(self):
@@ -33,7 +34,7 @@ class VerseMe:
 
     def search_and_display_verse(self, search):
         url = f"https://bible-api.com/{search}"
-        response = requests.get(url)
+        response = safe_requests.get(url)
 
         if response.status_code == 200:
             json_data = response.json()
